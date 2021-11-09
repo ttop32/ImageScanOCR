@@ -33,8 +33,7 @@ Image to text using window OCR
 - [breadcrumbbar](https://docs.microsoft.com/ko-kr/windows/apps/design/controls/breadcrumbbar)     
 - [file-access-permissions](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions)
 - [window-store-deploy](https://codedragon.tistory.com/3209)
-
-
+- [ocr_icon](https://www.flaticon.com/premium-icon/ocr_5558190)
 
 
 
