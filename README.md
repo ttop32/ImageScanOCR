@@ -30,6 +30,7 @@ https://www.nuget.org/packages/Microsoft.UI.Xaml
 - [gridsplitter](https://docs.microsoft.com/en-us/windows/communitytoolkit/controls/gridsplitter)     
 - [breadcrumbbar](https://docs.microsoft.com/ko-kr/windows/apps/design/controls/breadcrumbbar)     
 - [file-access-permissions](https://docs.microsoft.com/en-us/windows/uwp/files/file-access-permissions)
+- [window-store-deploy](https://codedragon.tistory.com/3209)
 
 
 
