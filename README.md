@@ -14,9 +14,9 @@ Recognise text from image using Window OCR
 
 # Required environment to run    
 - [winui2-getting-started](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/getting-started)     
-- [communitytoolkit-getting-started](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/getting-started)    
-- https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.UI.Controls/
-- https://www.nuget.org/packages/Microsoft.UI.Xaml
+  - https://www.nuget.org/packages/Microsoft.UI.Xaml
+- [communitytoolkit-getting-started](hhttps://docs.microsoft.com/en-us/windows/communitytoolkit/getting-started)    
+  - https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.UI.Controls/
 
 # Privacy policy
 - ImageScanOCR uses user data only for OCR purpose using window OCR.   
