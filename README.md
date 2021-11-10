@@ -7,7 +7,7 @@ Recognise text from image using Window OCR
 ![result](doc/screenshot_2.png)     
 
 # Features   
-- Recognise text from image using Window OCR
+- image to text using Window OCR
 - Image can be easily exploered using given side list panel
 - OCR result text can be saved as text file
 
