@@ -1,6 +1,5 @@
 # ImageScanOCR
-Image to text using window OCR
-
+Recognise text from image using Window OCR
 
 
 # Result   
@@ -8,10 +7,11 @@ Image to text using window OCR
 ![result](doc/screenshot_2.png)     
 
 # Features   
-- image to show text
-- allow to make text
-- file list
-  
+- Recognise text from image using Window OCR
+- Image can be easily exploered using given side list panel
+- OCR result text can be saved as text file
+
+
 # Required environment to run    
 - [winui2-getting-started](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/getting-started)     
 - [communitytoolkit-getting-started](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/getting-started)    
