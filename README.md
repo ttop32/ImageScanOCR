@@ -1,15 +1,19 @@
 # ImageScanOCR
-Recognise text from image using Window OCR
-
+Image Scan OCR recognise text from given image using Window OCR.
+This OCR app convert given text image to editable plain text. 
+User can handle its plain text and can save OCR result text as plain text file.
 
 # Result   
 ![result](doc/screenshot_1.png)    
 ![result](doc/screenshot_2.png)     
 
 # Features   
-- image to text using Window OCR
-- Image can be easily exploered using given side list panel
-- OCR result text can be saved as text file
+- convert image to editable text
+- user can edit OCR result text and save text as file
+- scanned text result can be copied into user clipboard
+- uses Window OCR API to support offline ocr process
+- support multiple OCR language when Window language pack installed
+- user can select folder to expoler OCR required file
 
 
 # Required environment to run    
