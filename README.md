@@ -11,10 +11,9 @@ User can handle its plain text and can save OCR result text as plain text file.
 - convert image to editable text
 - user can edit OCR result text and save text as file
 - scanned text result can be copied into user clipboard
-- uses Window OCR API to support offline ocr process
+- uses Window OCR API to support offline OCR process
 - support multiple OCR language when Window language pack installed
-- user can select folder to expoler OCR required file
-
+- user can select folder to search OCR required file
 
 # Required environment to run    
 - [winui2-getting-started](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/getting-started)     
