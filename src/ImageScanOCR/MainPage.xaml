@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="ImageScanOCR.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ImageScanOCR"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+>
+    <UserControl.Resources>
+        <local:FileSymbolConverter x:Key="FileSymbolConverter"/>
+    </UserControl.Resources>
+
+
+    <Page.TopAppBar>
+        <CommandBar IsOpen="True" DefaultLabelPosition="Right" >
+            <CommandBar.Content >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch">
+                    <SymbolIcon Symbol="Character" Margin="10,0"/>
+                    <TextBlock Text="Language" VerticalAlignment="Center" Margin="10,0"></TextBlock>
+                    <ComboBox x:Name="LangCombo"  PlaceholderText="No Language" ItemsSource="{x:Bind languageList}" DisplayMemberPath="DisplayName"
+                               VerticalAlignment="Center" MinHeight="48" SelectionChanged="LangCombo_SelectionChanged"/>
+                </StackPanel>
+            </CommandBar.Content>
+            <AppBarButton x:Name="OpenFolder" Label="OpenFolder"  Icon="NewFolder" Click="OpenFolder_Click"/>
+            <AppBarButton x:Name="CopyAll" Label="CopyAll" Icon="Copy" Click="CopyAll_Click"/>
+            <AppBarButton x:Name="SaveFile" Label="Save" Icon="Save" Click="SaveFile_Click"/>
+        </CommandBar>
+    </Page.TopAppBar>
+
+
+
+
+    <Grid Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+
+        </Grid.ColumnDefinitions>
+
+        <!--Column Grid Splitter-->
+        <controls:GridSplitter Grid.Column="1" Width="11" ResizeBehavior="BasedOnAlignment"
+            ResizeDirection="Auto" Background="Transparent" Foreground="White" FontSize="13">
+            <controls:GridSplitter.Element>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"   IsHitTestVisible="False" 
+                               Foreground="White" FontFamily="Segoe MDL2 Assets"  Text="&#xE784;">
+                    </TextBlock>
+                </Grid>
+            </controls:GridSplitter.Element>
+        </controls:GridSplitter>
+        <controls:GridSplitter Grid.Column="3" Width="11" ResizeBehavior="BasedOnAlignment"
+            ResizeDirection="Auto" Background="Transparent" Foreground="White" FontSize="13">
+            <controls:GridSplitter.Element>
+                <Grid>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"   IsHitTestVisible="False" 
+                               Foreground="White" FontFamily="Segoe MDL2 Assets"  Text="&#xE784;">
+                    </TextBlock>
+                </Grid>
+            </controls:GridSplitter.Element>
+        </controls:GridSplitter>
+
+
+
+        <Grid Grid.Column="0" Background="#1036C0FF">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <muxc:BreadcrumbBar x:Name="FolderBreadcrumbBar"
+                            ItemsSource="{x:Bind Breadcrumbs}"
+                            ItemClicked="FolderBreadcrumbBar_ItemClicked" Margin="8,8" Grid.Row="0">
+                </muxc:BreadcrumbBar>
+
+                <ListView x:Name="FolderListView" 
+             IsItemClickEnabled="True" 
+             ItemClick="FolderListView_ItemClick" Grid.Row="1">
+
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="{Binding Attributes, Converter={StaticResource FileSymbolConverter}}" Margin="0,0,10,0"/>
+                                <TextBlock Text="{Binding Name}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Column="2" >
+            <Image x:Name="PreviewImage" />
+        </Grid>
+        <Grid Grid.Column="4">
+            <TextBox x:Name="TextField" Text="" FontSize="24" Header="Result" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="0"/>
+        </Grid>
+    </Grid>
+</Page>
