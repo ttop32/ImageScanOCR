@@ -1,5 +1,5 @@
 # ImageScanOCR
-Image Scan OCR recognise text from given image using Window OCR.  
+Image Scan OCR recognize text from given image using Window OCR.  
 This OCR app convert given text image to editable plain text.   
 User can handle its plain text and can save OCR result text as plain text file.  
 
