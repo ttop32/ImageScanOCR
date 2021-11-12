@@ -23,7 +23,7 @@ User can handle its plain text and can save OCR result text as plain text file.
   - https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.UI.Controls/
 
 # Privacy policy
-- Image Scan OCR uses user data only for Window OCR process prupose.
+- Image Scan OCR uses user data only for Window OCR process purpose.
 - It does not share any user data with any other third parties.
 - It does not store any personal data, images, or OCR result text
 
