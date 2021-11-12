@@ -23,8 +23,9 @@ User can handle its plain text and can save OCR result text as plain text file.
   - https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.UI.Controls/
 
 # Privacy policy
-- ImageScanOCR uses user data only for OCR purpose using window OCR.   
-- It does not share any user data with any other third parties.   
+- Image Scan OCR uses user data only for Window OCR process prupose.
+- It does not share any user data with any other third parties.
+- It does not store any personal data, images, or OCR result text
 
 # Acknowledgement and References  
 - [winui2-getting-started](https://docs.microsoft.com/en-us/windows/apps/winui/winui2/getting-started)     
