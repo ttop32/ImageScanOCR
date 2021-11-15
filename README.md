@@ -2,6 +2,7 @@
 Image Scan OCR recognize text from given image using Window OCR.  
 This OCR app convert given text image to editable plain text.   
 User can handle its plain text and can save OCR result text as plain text file.  
+download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr/9pjhnq2r5kg7?activetab=pivot:overviewtab)     
 
 # Result   
 ![result](doc/screenshot_1.png)    
