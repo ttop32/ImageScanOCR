@@ -1,0 +1,1 @@
+C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\ImageScanOCR.csproj;x86
