@@ -36,7 +36,7 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - It does not store any personal data, images, or OCR result text
 
 # Change log
-- 1.0.3
+- 1.0.6
   - Apply WinUI Mica
   - Add tooltip to alert OCR language pack install  
   - Support batch OCR processing  
