@@ -6,7 +6,9 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 
 # Result   
 ![result](doc/screenshot_1.png)    
-![result](doc/screenshot_2.png)     
+![result](doc/screenshot_2.png)    
+![result](doc/screenshot_3.png)    
+
 
 # Features   
 - Convert image to editable text
