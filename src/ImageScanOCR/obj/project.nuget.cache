@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8JqR2Ar2WBGojME/vZAob43QbKRlGPuQfxjmOy14xlFyywa61NHoBzQkmwIFo45cLunTPAUbtvNOz1p3bkEWCw==",
+  "dgSpecHash": "inNsri2dFuHknqyHWugj5jEGXFwyaG9fL/gMZlNe02JomgCMaT6356MXRbwzZxjWmQjuilO97V50kEUUSdztCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tsop3\\Source\\Repos\\ttop32\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj",
+  "projectFilePath": "C:\\Users\\tsop3\\gitrepos\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tsop3\\.nuget\\packages\\colorcode.core\\2.0.6\\colorcode.core.2.0.6.nupkg.sha512",
     "C:\\Users\\tsop3\\.nuget\\packages\\colorcode.uwp\\2.0.6\\colorcode.uwp.2.0.6.nupkg.sha512",
@@ -23,7 +23,7 @@
     "C:\\Users\\tsop3\\.nuget\\packages\\microsoft.toolkit.uwp.ui.controls.media\\7.1.1\\microsoft.toolkit.uwp.ui.controls.media.7.1.1.nupkg.sha512",
     "C:\\Users\\tsop3\\.nuget\\packages\\microsoft.toolkit.uwp.ui.controls.primitives\\7.1.1\\microsoft.toolkit.uwp.ui.controls.primitives.7.1.1.nupkg.sha512",
     "C:\\Users\\tsop3\\.nuget\\packages\\microsoft.ui.xaml\\2.7.0\\microsoft.ui.xaml.2.7.0.nupkg.sha512",
-    "C:\\Users\\tsop3\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.2.12\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.10-rel-29722-00\\runtime.win10-arm.microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.2.8-rel-29722-00\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.8-rel-29722-00.nupkg.sha512",

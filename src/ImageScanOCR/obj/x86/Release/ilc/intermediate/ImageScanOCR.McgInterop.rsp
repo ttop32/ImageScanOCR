@@ -1,0 +1,39 @@
+﻿/debug:pdbonly
+/nowarn:0436;0618;1668;1685;1701;1702
+/debug+
+/nostdlib+
+/optimize+
+/out:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop.dll"
+/pdb:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop.pdb"
+/platform:anycpu
+/warnaserror+
+/unsafe
+/nologo
+/target:library
+/define:MCG_PRE_BUILD
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Private.CoreLib.iltoc"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Private.Interop.iltoc"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Private.Uri.iltoc"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Reflection.DispatchProxy.dll"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Reflection.dll"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Runtime.iltoc"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Runtime.InteropServices.dll"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Runtime.InteropServices.WindowsRuntime.dll"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Numerics.Vectors.dll"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Threading.iltoc"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Diagnostics.Debug.dll"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Runtime.Extensions.iltoc"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Collections.iltoc"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.ObjectModel.iltoc"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Runtime.WindowsRuntime.dll"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\in\System.Runtime.WindowsRuntime.UI.Xaml.dll"
+/r:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.net.native.sharedlibrary\2.2.8-rel-29722-00\tools\SharedLibrary\ret\AnalysisILToc\System.Private.SharedLibrary.Interop.Generated.iltoc"
+/r:"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\System.Private.ImageScanOCR.Generated.dll"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\Adapters.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\AssemblyInfo.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\Data.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\Helpers.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\ImplTypes.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\PInvoke.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\SafeTypes.g.cs"
+"C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Release\ilc\intermediate\ImageScanOCR.McgInterop\SharedStubs.g.cs"

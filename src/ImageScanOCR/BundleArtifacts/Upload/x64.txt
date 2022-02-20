@@ -1,0 +1,2 @@
+MainPackage=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x64\Release\Upload\ImageScanOCR_1.0.7.0_x64.msix
+SymbolPackage=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x64\Release\Upload\ImageScanOCR_1.0.7.0\ImageScanOCR_1.0.7.0_x64.appxsym

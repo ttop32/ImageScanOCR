@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>0ee2bfb7-c5b4-4ef3-b702-4ad36fa0c54d</PackageIdentityName>
     <PackageIdentityPublisher>CN=CFAA9C3F-1495-460F-A740-897FED00D564</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.exe">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.exe">
       <PackagePath>entrypoint\ImageScanOCR.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsop3\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
@@ -106,239 +106,239 @@
     <AppxPackagedFile Include="C:\Users\tsop3\.nuget\packages\microsoft.toolkit.uwp.ui.controls.media\7.1.1\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml">
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-100.png">
       <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-125.png">
       <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-150.png">
       <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-200.png">
       <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-400.png">
       <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.xr.xml">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.xr.xml">
       <PackagePath>ImageScanOCR.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
@@ -347,10 +347,10 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\ImageScanOCR.exe">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\ImageScanOCR.exe">
       <PackagePath>ImageScanOCR.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsop3\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">

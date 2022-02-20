@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tsop3\\Source\\Repos\\ttop32\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj": {}
+    "C:\\Users\\tsop3\\gitrepos\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tsop3\\Source\\Repos\\ttop32\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj": {
+    "C:\\Users\\tsop3\\gitrepos\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tsop3\\Source\\Repos\\ttop32\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj",
+        "projectUniqueName": "C:\\Users\\tsop3\\gitrepos\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj",
         "projectName": "ImageScanOCR",
-        "projectPath": "C:\\Users\\tsop3\\Source\\Repos\\ttop32\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj",
+        "projectPath": "C:\\Users\\tsop3\\gitrepos\\ImageScanOCR\\src\\ImageScanOCR\\ImageScanOCR.csproj",
         "packagesPath": "C:\\Users\\tsop3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tsop3\\Source\\Repos\\ttop32\\ImageScanOCR\\src\\ImageScanOCR\\obj\\",
+        "outputPath": "C:\\Users\\tsop3\\gitrepos\\ImageScanOCR\\src\\ImageScanOCR\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [

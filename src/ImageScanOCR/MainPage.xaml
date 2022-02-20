@@ -8,11 +8,12 @@
     mc:Ignorable="d"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    >
 
 
 
-    <Grid>
+    <Grid  >
 
 
 
@@ -80,8 +81,21 @@
                         </Grid>
 
                         <!--image panel-->
-                        <Grid Grid.Column="2" >
-                            <Image x:Name="PreviewImage" />
+                        <Grid Grid.Column="2"  AllowDrop="True"    Drop="Grid_Drop"    DragOver="Grid_DragOver"  Background="Transparent"  >
+                            <Image x:Name="PreviewImage" SizeChanged="ChangeCanvasSize"/>
+                            <Canvas x:Name="MyCanvas"
+                                IsHitTestVisible="True"
+                                PointerPressed="Canvas_MouseDown"
+                                PointerMoved="Canvas_MouseMove"
+                                PointerReleased="Canvas_MouseUp"
+                                PointerExited="Canvas_MouseExited"
+                                Background="Transparent" 
+                                PointerEntered="Canvas_MouseEntered"
+                                Width="0" 
+                                Height="0"
+                                >
+                                <Rectangle x:Name="CropBox" Stroke="Black" StrokeThickness="2" StrokeDashArray="5 5 1 5" Visibility="Collapsed"/>
+                            </Canvas>
                         </Grid>
 
                         <!--text panel-->

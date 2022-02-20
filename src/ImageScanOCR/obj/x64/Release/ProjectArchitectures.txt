@@ -1,0 +1,1 @@
+C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\ImageScanOCR.csproj;x64

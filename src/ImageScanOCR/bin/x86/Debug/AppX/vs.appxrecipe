@@ -10,7 +10,7 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>0ee2bfb7-c5b4-4ef3-b702-4ad36fa0c54d</PackageIdentityName>
     <PackageIdentityPublisher>CN=CFAA9C3F-1495-460F-A740-897FED00D564</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
@@ -18,25 +18,25 @@
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>E2244A82DC9BB66E4D8B1324C9B79ACB9AD5C5AEBF0CDC7062F51EDD476DA93C</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>36727ttop324.195639DD2ACDC_1.0.2.0_x86__ewrm79pevfdzc</RegisteredPackageMoniker>
+    <LayoutDir>C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\AppX</LayoutDir>
+    <RegisteredManifestChecksum>FC35FC5C91D14D29047D646420AEED7028FEB23F5701F195AC4AC7BA154E7EF7</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>36727ttop324.195639DD2ACDC_1.0.4.0_x86__ewrm79pevfdzc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>36727ttop324.195639DD2ACDC_ewrm79pevfdzc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>36727ttop324.195639DD2ACDC</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=CFAA9C3F-1495-460F-A740-897FED00D564</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.2.0</RegisteredVersion>
+    <RegisteredVersion>1.0.4.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:14:51.702</Modified>
+      <Modified>2022-02-20T05:28:43.121</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.exe">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.exe">
       <PackagePath>entrypoint\ImageScanOCR.exe</PackagePath>
-      <Modified>2021-11-26T13:14:50.773</Modified>
+      <Modified>2022-02-20T05:28:41.077</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsop3\.nuget\packages\colorcode.core\2.0.6\lib\netstandard1.4\ColorCode.Core.dll">
       <PackagePath>ColorCode.Core.dll</PackagePath>
@@ -142,300 +142,300 @@
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.Media\Microsoft.Toolkit.Uwp.UI.Controls.Media.xr.xml</PackagePath>
       <Modified>2021-10-18T23:19:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.083</Modified>
+      <Modified>2022-02-15T11:44:10.672</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-125.png">
       <PackagePath>Assets\BadgeLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.083</Modified>
+      <Modified>2022-02-15T11:44:10.673</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-150.png">
       <PackagePath>Assets\BadgeLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.084</Modified>
+      <Modified>2022-02-15T11:44:10.674</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-200.png">
       <PackagePath>Assets\BadgeLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.084</Modified>
+      <Modified>2022-02-15T11:44:10.674</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\BadgeLogo.scale-400.png">
       <PackagePath>Assets\BadgeLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.085</Modified>
+      <Modified>2022-02-15T11:44:10.675</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.086</Modified>
+      <Modified>2022-02-15T11:44:10.675</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-125.png">
       <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.086</Modified>
+      <Modified>2022-02-15T11:44:10.676</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-150.png">
       <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.087</Modified>
+      <Modified>2022-02-15T11:44:10.676</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.087</Modified>
+      <Modified>2022-02-15T11:44:10.677</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.088</Modified>
+      <Modified>2022-02-15T11:44:10.678</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.089</Modified>
+      <Modified>2022-02-15T11:44:10.679</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-125.png">
       <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.090</Modified>
+      <Modified>2022-02-15T11:44:10.679</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-150.png">
       <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.090</Modified>
+      <Modified>2022-02-15T11:44:10.679</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.092</Modified>
+      <Modified>2022-02-15T11:44:10.680</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.093</Modified>
+      <Modified>2022-02-15T11:44:10.681</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-125.png">
       <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.094</Modified>
+      <Modified>2022-02-15T11:44:10.681</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-150.png">
       <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.094</Modified>
+      <Modified>2022-02-15T11:44:10.681</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.095</Modified>
+      <Modified>2022-02-15T11:44:10.682</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.096</Modified>
+      <Modified>2022-02-15T11:44:10.682</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.096</Modified>
+      <Modified>2022-02-15T11:44:10.683</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.097</Modified>
+      <Modified>2022-02-15T11:44:10.683</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.098</Modified>
+      <Modified>2022-02-15T11:44:10.683</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.098</Modified>
+      <Modified>2022-02-15T11:44:10.684</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.099</Modified>
+      <Modified>2022-02-15T11:44:10.684</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.099</Modified>
+      <Modified>2022-02-15T11:44:10.685</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.100</Modified>
+      <Modified>2022-02-15T11:44:10.685</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.100</Modified>
+      <Modified>2022-02-15T11:44:10.685</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.101</Modified>
+      <Modified>2022-02-15T11:44:10.686</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-125.png">
       <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.101</Modified>
+      <Modified>2022-02-15T11:44:10.687</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-150.png">
       <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.102</Modified>
+      <Modified>2022-02-15T11:44:10.687</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.103</Modified>
+      <Modified>2022-02-15T11:44:10.688</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-16.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.103</Modified>
+      <Modified>2022-02-15T11:44:10.689</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.104</Modified>
+      <Modified>2022-02-15T11:44:10.690</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-256.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.105</Modified>
+      <Modified>2022-02-15T11:44:10.691</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-32.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-32.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.106</Modified>
+      <Modified>2022-02-15T11:44:10.692</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-48.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.106</Modified>
+      <Modified>2022-02-15T11:44:10.692</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-100.png">
       <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.107</Modified>
+      <Modified>2022-02-15T11:44:10.693</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-125.png">
       <PackagePath>Assets\Square71x71Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.107</Modified>
+      <Modified>2022-02-15T11:44:10.693</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-150.png">
       <PackagePath>Assets\Square71x71Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.108</Modified>
+      <Modified>2022-02-15T11:44:10.694</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-200.png">
       <PackagePath>Assets\Square71x71Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.108</Modified>
+      <Modified>2022-02-15T11:44:10.694</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square71x71Logo.scale-400.png">
       <PackagePath>Assets\Square71x71Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.109</Modified>
+      <Modified>2022-02-15T11:44:10.695</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.110</Modified>
+      <Modified>2022-02-15T11:44:10.695</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-125.png">
       <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.111</Modified>
+      <Modified>2022-02-15T11:44:10.695</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-150.png">
       <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.112</Modified>
+      <Modified>2022-02-15T11:44:10.696</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.112</Modified>
+      <Modified>2022-02-15T11:44:10.696</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.113</Modified>
+      <Modified>2022-02-15T11:44:10.696</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.114</Modified>
+      <Modified>2022-02-15T11:44:10.697</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-125.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-125.png">
       <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.114</Modified>
+      <Modified>2022-02-15T11:44:10.697</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-150.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-150.png">
       <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.115</Modified>
+      <Modified>2022-02-15T11:44:10.697</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-400.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.117</Modified>
+      <Modified>2022-02-15T11:44:10.698</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2021-11-26T13:09:37.088</Modified>
+      <Modified>2022-02-15T11:44:10.678</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.091</Modified>
+      <Modified>2022-02-15T11:44:10.680</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.095</Modified>
+      <Modified>2022-02-15T11:44:10.682</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.102</Modified>
+      <Modified>2022-02-15T11:44:10.688</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.105</Modified>
+      <Modified>2022-02-15T11:44:10.690</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-11-26T13:09:37.116</Modified>
+      <Modified>2022-02-15T11:44:10.698</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2021-11-26T13:09:37.121</Modified>
+      <Modified>2022-02-15T11:44:10.998</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.xr.xml">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\ImageScanOCR.xr.xml">
       <PackagePath>ImageScanOCR.xr.xml</PackagePath>
-      <Modified>2021-11-26T13:14:50.574</Modified>
+      <Modified>2022-02-20T01:56:53.006</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-11-26T13:14:50.604</Modified>
+      <Modified>2022-02-20T05:28:40.809</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-11-26T13:14:50.604</Modified>
+      <Modified>2022-02-20T05:28:40.809</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -445,13 +445,13 @@
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
       <Modified>2020-12-01T17:52:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-11-26T13:10:27.131</Modified>
+      <Modified>2022-02-20T05:03:41.831</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\tsop3\Source\Repos\ttop32\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\ImageScanOCR.exe">
+    <AppxPackagedFile Include="C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\x86\Debug\Core\ImageScanOCR.exe">
       <PackagePath>ImageScanOCR.exe</PackagePath>
-      <Modified>2021-11-26T13:14:51.698</Modified>
+      <Modified>2022-02-20T05:28:43.115</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\tsop3\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>Microsoft.UI.Xaml.winmd</PackagePath>
