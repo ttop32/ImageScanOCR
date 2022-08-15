@@ -1,6 +1,0 @@
-MainPackage=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\ARM\Release\Upload\ImageScanOCR_1.0.7.0_ARM.msix
-SymbolPackage=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\ARM\Release\Upload\ImageScanOCR_1.0.7.0\ImageScanOCR_1.0.7.0_ARM.appxsym
-ResourcePack=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\ARM\Release\Upload\ImageScanOCR_1.0.7.0_scale-100.msix
-ResourcePack=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\ARM\Release\Upload\ImageScanOCR_1.0.7.0_scale-125.msix
-ResourcePack=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\ARM\Release\Upload\ImageScanOCR_1.0.7.0_scale-150.msix
-ResourcePack=C:\Users\tsop3\gitrepos\ImageScanOCR\src\ImageScanOCR\bin\ARM\Release\Upload\ImageScanOCR_1.0.7.0_scale-400.msix

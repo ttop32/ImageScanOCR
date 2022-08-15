@@ -1,2 +1,0 @@
-System.Runtime.Serialization.Formatters, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-  FxResources.System.Runtime.Serialization.Formatters.SR.resources

@@ -1,2 +1,0 @@
-Microsoft.Toolkit.Uwp.UI.Controls.DataGrid, Version=7.1.0.0, Culture=neutral, PublicKeyToken=null
-  Microsoft.Toolkit.Uwp.UI.Controls.Resources.resources
