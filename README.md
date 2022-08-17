@@ -37,6 +37,8 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 
 # Change log
 - 1.0.8
+  - support OCR on screen capture
+- 1.0.8
   - fix batch processing
   - add "add language" button
 - 1.0.7
