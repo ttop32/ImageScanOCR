@@ -4,7 +4,8 @@ This OCR app convert given text image to editable plain text.
 User can handle its plain text and can save OCR result text as plain text file.  
 download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr/9pjhnq2r5kg7?activetab=pivot:overviewtab)     
 
-[<img alt="microsoft store" width="40px" src="doc/microsoft.png" />](https://www.microsoft.com/en-us/p/image-scan-ocr/9pjhnq2r5kg7?activetab=pivot:overviewtab)
+[<img alt="microsoft store" width="128px" src="doc/microsoft.png" />](https://www.microsoft.com/en-us/p/image-scan-ocr/9pjhnq2r5kg7?activetab=pivot:overviewtab)
+[<img alt="softpedia" width="128px" src="doc/softpedia.png" />](https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Image-Scan-OCR.shtml)
 
 
 # Result   
@@ -83,7 +84,7 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - [mica](https://docs.microsoft.com/en-us/windows/apps/design/style/mica)   
 - [Rise-Notes](https://github.com/Rise-Software/Rise-Notes)   
 - [window store delploy](https://codedragon.tistory.com/3209) 
-
+- [softpedia](https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Image-Scan-OCR.shtml)
 
 
 
