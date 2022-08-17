@@ -40,7 +40,7 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - It does not store any personal data, images, or OCR result text
 
 # Change log
-- 1.0.8
+- 1.0.9
   - support OCR on screen capture
 - 1.0.8
   - fix batch processing
