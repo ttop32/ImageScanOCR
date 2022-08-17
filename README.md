@@ -36,6 +36,9 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - It does not store any personal data, images, or OCR result text
 
 # Change log
+- 1.0.8
+  - fix batch processing
+  - add "add language" button
 - 1.0.7
   - make feature that refresh file explorer panel automatically
   - allow drag and drop image file into image panel
