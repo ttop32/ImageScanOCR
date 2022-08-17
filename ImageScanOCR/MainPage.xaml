@@ -83,40 +83,50 @@
                         <!--image panel-->
                         <Grid Grid.Column="2"  AllowDrop="True"    Drop="Grid_Drop"    DragOver="Grid_DragOver"  Background="Transparent"  >
 
+                            <ScrollViewer  x:Name="ImageSingleBox" ZoomMode="Enabled" MaxZoomFactor="10" MinZoomFactor="1"   HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto"   SizeChanged="ScrollViewer_SizeChanged">
 
-                            <ScrollViewer x:Name="ImageSingleBox" ZoomMode="Enabled" MaxZoomFactor="10" MinZoomFactor="1"   HorizontalScrollBarVisibility="Auto"  VerticalScrollBarVisibility="Auto"   SizeChanged="ScrollViewer_SizeChanged">
                                 <Grid x:Name="ImageSingleGrid">
-                                    <Image x:Name="PreviewImage" SizeChanged="ChangeCanvasSize" />
+                                    <Image x:Name="PreviewImage" SizeChanged="PreviewImage_SizeChanged"/>
+
+
+                                    <Grid  x:Name="CaptureBox" />
                                     <Canvas x:Name="MyCanvas"
                                         IsHitTestVisible="True"
                                         PointerPressed="Canvas_MouseDown"
                                         PointerMoved="Canvas_MouseMove"
                                         PointerReleased="Canvas_MouseUp"
                                         PointerExited="Canvas_MouseExited"
-                                        Background="Transparent" 
+                                        Background="Transparent"
                                         PointerEntered="Canvas_MouseEntered"
                                         Width="0" 
                                         Height="0"
                                         >
-                                        <Rectangle x:Name="CropBox" Stroke="Black"  StrokeThickness="1.5" StrokeDashArray="5 5 4 5" Visibility="Collapsed"   />
+                                        <Rectangle x:Name="CropBox" Stroke="Green" Opacity="0.8" StrokeThickness="2" StrokeDashArray="5 5 4 5" Visibility="Collapsed" />
                                     </Canvas>
                                 </Grid>
+
                             </ScrollViewer>
-
-
-
-                            <ListView x:Name="ImageListView" SelectionMode="None" Visibility="Collapsed" ItemsSource="{x:Bind ImageList}">
-                                <ListView.ItemTemplate>
+                            
+                            <ListView  x:Name="ImageListView" SelectionMode="None" Visibility="Collapsed" ItemsSource="{x:Bind ImageList}">
+                                <ListView.ItemTemplate >
                                     <DataTemplate x:DataType="BitmapImage">
                                         <Image Source="{Binding}" />
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
+
+
+
+
+
+
                         </Grid>
 
                         <!--text panel-->
                         <Grid Grid.Column="4">
-                            <TextBox x:Name="TextField" Text="" FontSize="18" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="0" Padding="15" CornerRadius="0"/>
+                            <TextBox x:Name="TextField" Text="" FontSize="18" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" BorderThickness="0" Padding="15" CornerRadius="0"
+                                     GettingFocus="TextField_GettingFocus"
+                                     LosingFocus="TextField_LosingFocus"/>
                             <ProgressRing x:Name="ProgressItem" Height="100" Width="100"/>
                         </Grid>
                     </Grid>
@@ -173,11 +183,14 @@
                     </StackPanel>
                 </AppBarElementContainer>
 
-                <AppBarSeparator x:Name="sepCl" Margin="4,0,0,10"  Height="30"/>
                 <AppBarButton x:Name="AddLanguage" Label="Add Language" Icon="Add" Click="AddLanguage_Click"/>
-                <AppBarButton x:Name="OpenFolder" Label="Open Folder" Icon="NewFolder" Click="OpenFolder_Click"/>
+                <AppBarSeparator x:Name="sep1" Margin="4,0,0,10"  Height="30"/>
+                <AppBarButton x:Name="Capture" Label="Capture" Icon="Video" Click="Capture_Click"/>
+                <AppBarButton x:Name="CancelCapture" Label="Cancel Capture" Icon="Cancel" Click="CancelCapture_Click" Visibility="Collapsed"/>
                 <AppBarButton x:Name="BatchProcess" Label="Batch Process" Icon="OpenWith" Click="BatchProcess_Click" Visibility="Visible"/>
                 <AppBarButton x:Name="CancelBatch" Label="Cancel Batch" Icon="Cancel" Click="CancelBatch_Click" Visibility="Collapsed"/>
+                <AppBarSeparator x:Name="sep2" Margin="4,0,0,10"  Height="30"/>
+                <AppBarButton x:Name="OpenFolder" Label="Open Folder" Icon="NewFolder" Click="OpenFolder_Click"/>
                 <AppBarButton x:Name="Rotate" Label="Rotate" Icon="Rotate" Click="Rotate_Click"/>
                 <AppBarButton x:Name="WrapText" Label="Wrap Text" Icon="AlignLeft" Click="WrapText_Click"/>
                 <AppBarButton x:Name="CopyAll" Label="Copy All" Icon="Copy" Click="CopyAll_Click"/>

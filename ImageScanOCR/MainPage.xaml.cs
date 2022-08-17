@@ -1,4 +1,5 @@
-﻿
+﻿using Microsoft.Graphics.Canvas;
+using Microsoft.Graphics.Canvas.UI.Composition;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,11 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Data.Pdf;
+using Windows.Foundation;
 using Windows.Globalization;
+using Windows.Graphics;
+using Windows.Graphics.Capture;
+using Windows.Graphics.DirectX;
 using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
 using Windows.Storage;
@@ -22,11 +27,13 @@ using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.System;
 using Windows.UI;
+using Windows.UI.Composition;
 using Windows.UI.Core;
 using Windows.UI.Input;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Hosting;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Imaging;
 using muxc = Microsoft.UI.Xaml.Controls;
@@ -38,20 +45,37 @@ namespace ImageScanOCR {
     /// select image to display image and process ocr to display text in right panel
     /// </summary>
     public sealed partial class MainPage : Page {
+        //observable
         ObservableCollection<ExplorerItem> Breadcrumbs = new ObservableCollection<ExplorerItem>();
         ObservableCollection<ExplorerItem> ExplorerList = new ObservableCollection<ExplorerItem>();
         ObservableCollection<Language> LanguageList = new ObservableCollection<Language>();
         ObservableCollection<SoftwareBitmapSource> ImageList = new ObservableCollection<SoftwareBitmapSource>();
 
+        //
         Language SelectedLang = null;
         SoftwareBitmap CurrentBitmap = null;
         List<string> CurrentOcrResult = new List<string>() { };
+        List<string> PrevOcrResult = new List<string>() { };
         ApplicationDataContainer LocalSettings = SettingHandler.GetSetting();
         CancellationTokenSource TokenSource = new CancellationTokenSource();
         string CurrentProcessedItemName = "New Document";
-        private bool _mouseDown = false;
+        private bool IsCropped = false;
         private BoxCoordinates cropBoxCoordinates;
         CoreCursor cursorBeforePointerEntered = Window.Current.CoreWindow.PointerCursor;
+        private bool textFieldFocused = false;
+
+        // Capture API objects.
+        private SizeInt32 _lastSize;
+        private GraphicsCaptureItem _item;
+        private Direct3D11CaptureFramePool _framePool;
+        private GraphicsCaptureSession _session;
+        private CanvasDevice _canvasDevice;
+        private CompositionGraphicsDevice _compositionGraphicsDevice;
+        private Compositor _compositor;
+        private CompositionDrawingSurface _surface;
+        private CanvasBitmap _currentFrame;
+        private DispatcherTimer _captureDispatcherTimer = new DispatcherTimer();
+        private DateTime _lastOcrRuntime = DateTime.Now;
 
         public MainPage() {
             Debug.WriteLine("Start==============================");
@@ -62,6 +86,7 @@ namespace ImageScanOCR {
             InitLanguageList();
             InitTooltip();
             InitFolderRefresh();
+            SetupCapture();
         }
 
 
@@ -111,6 +136,8 @@ namespace ImageScanOCR {
             LanguageList = new ObservableCollection<Language>(OcrProcessor.GetOcrLangList());
             SelectLanguageFromSetting();
         }
+
+
         private void SelectLanguageFromSetting() {
             String settingLang = LocalSettings.Values["Language"] as string;
 
@@ -131,6 +158,9 @@ namespace ImageScanOCR {
             ProcessImage(CurrentBitmap);
         }
 
+        private async void AddLanguage_Click(object sender, RoutedEventArgs e) {
+            await Launcher.LaunchUriAsync(new Uri("ms-settings:regionlanguage-adddisplaylanguage"));
+        }
 
 
 
@@ -151,7 +181,7 @@ namespace ImageScanOCR {
                     // if no recent picked folder, show picture library
                     Breadcrumbs.Add(new ExplorerItem(KnownFolders.PicturesLibrary));
                 }
-            } catch (FileNotFoundException e) {
+            } catch (FileNotFoundException) {
             }
         }
 
@@ -163,6 +193,7 @@ namespace ImageScanOCR {
             dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
             dispatcherTimer.Start();
         }
+
 
         private async void RefreshFileList() {
             if (Breadcrumbs.Any()) {
@@ -215,6 +246,9 @@ namespace ImageScanOCR {
             }
         }
 
+        
+
+
         //open folder and reset
         private async void OpenFolder_Click(object sender, RoutedEventArgs e) {
             var folderPicker = new FolderPicker();
@@ -254,53 +288,96 @@ namespace ImageScanOCR {
             if (imageItem == null) {
                 return;
             }
+            
             if (updateDisplayImage) {
+                resetImageProcess();
                 DisplayImage(imageItem);
+                showSingleImageBox();
             }
-            CancelBatchProcess();    //cancel any running batch
+            if (IsCropped) {
+                (uint x, uint y, uint w, uint h) = cropBoxCoordinates.GetRatioXYWH(imageItem.PixelWidth, imageItem.PixelHeight);
+                if (w>1&&h>1) { //if too small crop skip
+                    imageItem = await ImageProcessor.GetCroppedImage(imageItem, x, y, w, h);
+                }
+            }
+
+
             CurrentOcrResult = await OcrProcessor.GetText(imageItem, SelectedLang);
             DisplayText();
         }
 
         public async void DisplayImage(SoftwareBitmap imageItem) {
-            showSingleImageBox();
-            PreviewImage.Source = await ImageProcessor.getImageSource(imageItem);
-            CropBox.Visibility = Visibility.Collapsed;
+            PreviewImage.Source = await ImageProcessor.getImageSource(imageItem);   
         }
 
-
-
-
-
         private void showSingleImageBox() {
-            ImageListView.Visibility = Visibility.Collapsed;
             ImageSingleBox.Visibility = Visibility.Visible;
+            PreviewImage.Visibility = Visibility.Visible;
+            MyCanvas.Visibility = Visibility.Visible;
         }
         private void showScrollImageBox() {
             ImageListView.Visibility = Visibility.Visible;
-            ImageSingleBox.Visibility = Visibility.Collapsed;
         }
+        private void showCaptureBox() {
+            ImageSingleBox.Visibility = Visibility.Visible;
+            PreviewImage.Visibility = Visibility.Visible;
+            CaptureBox.Visibility = Visibility.Visible;
+            MyCanvas.Visibility = Visibility.Visible;
+        }
+        private void resetImageProcess() {
+            //image reset
+            ImageSingleBox.Visibility = Visibility.Collapsed;
+            PreviewImage.Visibility = Visibility.Collapsed;
+            MyCanvas.Visibility=Visibility.Collapsed;
+            CropBox.Visibility = Visibility.Collapsed;
+            CurrentOcrResult.Clear();
+            IsCropped = false;
+            cropBoxCoordinates =null;
+
+            //batch reset
+            ImageListView.Visibility = Visibility.Collapsed;
+            ImageList.Clear();
+            CancelBatchProcess();
+            ProgressItem.IsActive = false;
+            ShowBatchButton();
+
+            //capture reset
+            CaptureBox.Visibility = Visibility.Collapsed;
+            ShowCaptureButton();
+            StopCapture();
+        }
+
+        private void ScrollViewer_SizeChanged(object sender, SizeChangedEventArgs e) {
+            var scrollViewer = ((ScrollViewer)sender);
+            ImageSingleGrid.Width = scrollViewer.ActualWidth;
+            ImageSingleGrid.Height = scrollViewer.ActualHeight;
+        }
+
 
 
         //Batch  ============================================================================================================================
 
         private async void BatchProcess_Click(object sender, RoutedEventArgs e) {
-            BatchProcess.Visibility = Visibility.Collapsed;
-            CancelBatch.Visibility = Visibility.Visible;
-            ProgressItem.IsActive = true;
-            CurrentOcrResult.Clear();
+            resetImageProcess();
             showScrollImageBox();
-            ImageList.Clear();
+            ShowCancelBatchButton();
+            ProgressItem.IsActive = true;
 
             await ProcessBatch();
 
+            ShowBatchButton();
             DisplayText();
             ProgressItem.IsActive = false;
-            BatchProcess.Visibility = Visibility.Visible;
-            CancelBatch.Visibility = Visibility.Collapsed;
-
         }
 
+        private void ShowBatchButton() {
+            BatchProcess.Visibility = Visibility.Visible;
+            CancelBatch.Visibility = Visibility.Collapsed;
+        }
+        private void ShowCancelBatchButton() {
+            BatchProcess.Visibility = Visibility.Collapsed;
+            CancelBatch.Visibility = Visibility.Visible;
+        }
 
 
         private async Task ProcessBatch() {
@@ -319,12 +396,10 @@ namespace ImageScanOCR {
                     List<string> textList = await OcrProcessor.GetText(bitmapImage, SelectedLang);
                     textList.Add("");                                 //add empty line to separate result
                     CurrentOcrResult.AddRange(textList);
-                    Debug.WriteLine(String.Join("\n", textList.ToArray()));
-
+                    
                     //display update
                     ImageList.Add(await ImageProcessor.getImageSource(bitmapImage));
                     DisplayText();
-
                 }
             }
         }
@@ -365,6 +440,11 @@ namespace ImageScanOCR {
             LocalSettings.Values["WrapText"] = TextProcessor.GetNextTextMode(currentSelectedItem);
         }
         private void DisplayText() {
+            //if ocr result is not changed, skip
+            if (PrevOcrResult.SequenceEqual(CurrentOcrResult)) {
+                return;
+            }
+            PrevOcrResult = new List<String>(CurrentOcrResult.ToArray());
             string currentMode = LocalSettings.Values["WrapText"] as string;
             TextField.Text = TextProcessor.GetWrapText(CurrentOcrResult, currentMode);
         }
@@ -404,47 +484,36 @@ namespace ImageScanOCR {
 
 
 
+        private void PreviewImage_SizeChanged(object sender, SizeChangedEventArgs e) {
+            IsCropped=false;
+            cropBoxCoordinates = null;
+            CropBox.Visibility = Visibility.Collapsed;
+            MyCanvas.Width = ((Image)sender).ActualWidth;
+            MyCanvas.Height = ((Image)sender).ActualHeight;
+        }
 
         private void Canvas_MouseEntered(object sender, PointerRoutedEventArgs e) {
             Window.Current.CoreWindow.PointerCursor = new CoreCursor(CoreCursorType.Cross, 0);
         }
         private void Canvas_MouseDown(object sender, PointerRoutedEventArgs e) {
-            PointerPoint ptrPt = e.GetCurrentPoint((UIElement)sender);
-            if (ptrPt.Properties.IsLeftButtonPressed) {
-                _mouseDown = true;
-                var pos = ptrPt.Position;
-                cropBoxCoordinates = new BoxCoordinates((int)ptrPt.Position.X, (int)ptrPt.Position.Y, (int)MyCanvas.Width, (int)MyCanvas.Height);
+            (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
 
-                CropBox.Translation = new Vector3() {
-                    X = cropBoxCoordinates.X,
-                    Y = cropBoxCoordinates.Y,
-                    Z = 0
-                };
-                CropBox.Width = 0;
-                CropBox.Height = 0;
-                CropBox.Visibility = Visibility.Visible;
+            if (IsLeftButtonPressed) {
+                UpdateCropBox(X,Y, true);
             }
-
-            // Prevent most handlers along the event route from handling the same event again.
             e.Handled = true;
         }
         private void Canvas_MouseMove(object sender, PointerRoutedEventArgs e) {
-            PointerPoint ptrPt = e.GetCurrentPoint((UIElement)sender);
-
-            if (_mouseDown) {
-                var pos = ptrPt.Position;
-                cropBoxCoordinates.UpdateCoordinates((int)pos.X, (int)pos.Y);
-                UpdateCropBox(cropBoxCoordinates);
-            }
-
-            // Prevent most handlers along the event route from handling the same event again.
+            (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
+            UpdateCropBox(X,Y);
             e.Handled = true;
         }
 
         private void Canvas_MouseUp(object sender, PointerRoutedEventArgs e) {
-            PointerPoint ptrPt = e.GetCurrentPoint((UIElement)sender);
-            if (_mouseDown && !ptrPt.Properties.IsLeftButtonPressed) {
-                ProcessCanvas((int)ptrPt.Position.X, (int)ptrPt.Position.Y);
+            (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
+
+            if (!IsLeftButtonPressed) {
+                ProcessCanvas(X, Y);
             }
             // Prevent most handlers along the event route from handling the same event again.
             e.Handled = true;
@@ -452,50 +521,40 @@ namespace ImageScanOCR {
         }
 
         private void Canvas_MouseExited(object sender, PointerRoutedEventArgs e) {
-            PointerPoint ptrPt = e.GetCurrentPoint((UIElement)sender);
-            ProcessCanvas((int)ptrPt.Position.X, (int)ptrPt.Position.Y);
+            (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
+            ProcessCanvas(X,Y);
             Window.Current.CoreWindow.PointerCursor = cursorBeforePointerEntered;
             e.Handled = true;
         }
 
-        private async void ProcessCanvas(int X, int Y) {
-            if (!_mouseDown) {
+
+        private void ProcessCanvas(int X, int Y) {
+            if (IsCropped || cropBoxCoordinates==null) {
+                return;
+            }
+            IsCropped = true;
+            UpdateCropBox(X,Y);
+            ProcessImage(CurrentBitmap, false);
+        }
+
+        
+        private (int, int, bool) GetPointerStatus(object sender, PointerRoutedEventArgs e) {
+            //return X, Y, IsLeftButtonPressed
+            PointerPoint ptrPt = e.GetCurrentPoint((UIElement)sender);
+            return ((int)ptrPt.Position.X, (int)ptrPt.Position.Y, ptrPt.Properties.IsLeftButtonPressed);
+        }
+
+        private void UpdateCropBox(int X, int Y, bool Reset=false) {
+            if (Reset) {
+                IsCropped = false;
+                cropBoxCoordinates = new BoxCoordinates(X, Y, (int)MyCanvas.Width, (int)MyCanvas.Height);
+            }
+            if (IsCropped==true || cropBoxCoordinates == null) {
                 return;
             }
 
-            _mouseDown = false;
             cropBoxCoordinates.UpdateCoordinates(X, Y);
-            UpdateCropBox(cropBoxCoordinates);
 
-            double ratioWidth = CurrentBitmap.PixelWidth / MyCanvas.Width;
-            double ratioHeight = CurrentBitmap.PixelHeight / MyCanvas.Height;
-            uint x = (uint)(cropBoxCoordinates.X * ratioWidth);
-            uint y = (uint)(cropBoxCoordinates.Y * ratioHeight);
-            uint w = (uint)(cropBoxCoordinates.W * ratioWidth);
-            uint h = (uint)(cropBoxCoordinates.H * ratioHeight);
-
-            //if mouse not moved just do ocr whole image , else do cropped image
-            if (w < 1 || h < 1) {
-                ProcessImage(CurrentBitmap, false);
-            } else {
-                SoftwareBitmap croppedImage = await ImageProcessor.GetCroppedImage(CurrentBitmap, x, y, w, h);
-                ProcessImage(croppedImage, false);
-            }
-        }
-
-        private void ChangeCanvasSize(object sender, SizeChangedEventArgs e) {
-            MyCanvas.Width = ((Image)sender).ActualWidth;
-            MyCanvas.Height = ((Image)sender).ActualHeight;
-        }
-        private void ScrollViewer_SizeChanged(object sender, SizeChangedEventArgs e) {
-            var scrollViewer = ((ScrollViewer)sender);
-
-            ImageSingleGrid.Width = scrollViewer.ActualWidth;
-            ImageSingleGrid.Height = scrollViewer.ActualHeight;
-        }
-
-
-        private void UpdateCropBox(BoxCoordinates cropBoxCoord) {
             CropBox.Translation = new Vector3() {
                 X = cropBoxCoordinates.X,
                 Y = cropBoxCoordinates.Y,
@@ -503,12 +562,219 @@ namespace ImageScanOCR {
             };
             CropBox.Width = cropBoxCoordinates.W;
             CropBox.Height = cropBoxCoordinates.H;
+            CropBox.Visibility = Visibility.Visible;
         }
 
-        private void AddLanguage_Click(object sender, RoutedEventArgs e) {
-            Launcher.LaunchUriAsync(new Uri("ms-settings:regionlanguage-adddisplaylanguage"));
+
+
+
+        //Screen capture======================================================================================
+
+        private async void Capture_Click(object sender, RoutedEventArgs e) {
+            resetImageProcess();
+            ShowCancelCaptureButton();
+            await StartCaptureAsync();
         }
 
+        private void CancelCapture_Click(object sender, RoutedEventArgs e) {
+            ShowCaptureButton();
+            StopCapture();
+        }
+
+        private void ShowCaptureButton() {
+            Capture.Visibility = Visibility.Visible;
+            CancelCapture.Visibility = Visibility.Collapsed;
+        }
+        private void ShowCancelCaptureButton() {
+            Capture.Visibility = Visibility.Collapsed;
+            CancelCapture.Visibility = Visibility.Visible;
+        }
+
+        private void SetupCapture() {
+            if (!GraphicsCaptureSession.IsSupported()) {
+                // Hide the capture UI if screen capture is not supported.
+                Capture.Visibility = Visibility.Collapsed;
+            }
+
+            _canvasDevice = new CanvasDevice();
+
+            _compositionGraphicsDevice = CanvasComposition.CreateCompositionGraphicsDevice(
+                Window.Current.Compositor,
+                _canvasDevice);
+
+            _compositor = Window.Current.Compositor;
+
+            _surface = _compositionGraphicsDevice.CreateDrawingSurface(
+                new Size(400, 400),
+                DirectXPixelFormat.B8G8R8A8UIntNormalized,
+                DirectXAlphaMode.Premultiplied);    // This is the only value that currently works with
+                                                    // the composition APIs.
+
+            
+            var visual = _compositor.CreateSpriteVisual();
+            visual.RelativeSizeAdjustment = Vector2.One;
+            var brush = _compositor.CreateSurfaceBrush(_surface);
+            brush.HorizontalAlignmentRatio = 0.5f;
+            brush.VerticalAlignmentRatio = 0.5f;
+            brush.Stretch = CompositionStretch.Uniform;
+            visual.Brush = brush;
+            ElementCompositionPreview.SetElementChildVisual(CaptureBox, visual);
+        }
+
+        public async Task StartCaptureAsync() {
+            // The GraphicsCapturePicker follows the same pattern the
+            // file pickers do.
+            var picker = new GraphicsCapturePicker();
+            GraphicsCaptureItem item = await picker.PickSingleItemAsync();
+
+            // The item may be null if the user dismissed the
+            // control without making a selection or hit Cancel.
+            if (item != null) {
+                resetImageProcess();
+                showCaptureBox();
+                StartCaptureInternal(item);
+            } else {
+                ShowCaptureButton();
+            }
+        }
+
+
+
+        private void StartCaptureInternal(GraphicsCaptureItem item) {
+            // Stop the previous capture if we had one.
+            StopCapture();
+
+            _item = item;
+            _lastSize = _item.Size;
+
+
+            _framePool = Direct3D11CaptureFramePool.Create(
+               _canvasDevice, // D3D device
+               DirectXPixelFormat.B8G8R8A8UIntNormalized, // Pixel format
+               2, // Number of frames
+               _item.Size); // Size of the buffers
+            
+            _framePool.FrameArrived += (s, a) => {
+                using (var frame = _framePool.TryGetNextFrame()) {
+                    ProcessFrame(frame);
+                }
+                
+            };
+
+            _item.Closed += (s, a) => {
+                StopCapture();
+            };
+
+            _session = _framePool.CreateCaptureSession(_item);
+            _session.StartCapture();
+        }
+
+        public void StopCapture() {
+            _session?.Dispose();
+            _framePool?.Dispose();
+            _item = null;
+            _session = null;
+            _framePool = null;
+            
+        }
+
+        private void ProcessFrame(Direct3D11CaptureFrame frame) {
+            // Resize and device-lost leverage the same function on the
+            // Direct3D11CaptureFramePool. Refactoring it this way avoids
+            // throwing in the catch block below (device creation could always
+            // fail) along with ensuring that resize completes successfully and
+            // isn’t vulnerable to device-lost.
+            bool needsReset = false;
+            bool recreateDevice = false;
+
+            if ((frame.ContentSize.Width != _lastSize.Width) ||
+                (frame.ContentSize.Height != _lastSize.Height)) {
+                needsReset = true;
+                _lastSize = frame.ContentSize;
+            }
+
+            try {
+                // Take the D3D11 surface and draw it into a  
+                // Composition surface.
+
+                // Convert our D3D11 surface into a Win2D object.
+                CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
+                    _canvasDevice,
+                    frame.Surface);
+                
+                _currentFrame = canvasBitmap;
+
+                // Helper that handles the drawing for us.
+                FillSurfaceWithBitmap(canvasBitmap);
+                OcrOnCapturedImage(canvasBitmap);
+            }
+
+
+            // This is the device-lost convention for Win2D.
+            catch (Exception e) when (_canvasDevice.IsDeviceLost(e.HResult)) {
+                // We lost our graphics device. Recreate it and reset
+                // our Direct3D11CaptureFramePool.  
+                needsReset = true;
+                recreateDevice = true;
+            }
+
+            if (needsReset) {
+                ResetFramePool(frame.ContentSize, recreateDevice);
+            }
+        }
+
+
+        private void FillSurfaceWithBitmap(CanvasBitmap canvasBitmap) {
+            CanvasComposition.Resize(_surface, canvasBitmap.Size);
+            using (var session = CanvasComposition.CreateDrawingSession(_surface)) {
+                session.Clear(Colors.Transparent);
+                session.DrawImage(canvasBitmap);
+            }
+        }
+
+
+        private async void OcrOnCapturedImage(CanvasBitmap canvasBitmap) {
+            //run ones every 0.7 second, stop if textEdit is focused
+            if (DateTime.Now.Subtract(_lastOcrRuntime).TotalSeconds > 0.7 && !textFieldFocused) {
+                _lastOcrRuntime = DateTime.Now;
+                SoftwareBitmap softwareBitmapImg = await SoftwareBitmap.CreateCopyFromSurfaceAsync(canvasBitmap, BitmapAlphaMode.Premultiplied);
+                CurrentBitmap = softwareBitmapImg;
+                DisplayImage(softwareBitmapImg);
+                ProcessImage(softwareBitmapImg, false);
+            }
+        }
+
+        
+
+        private void ResetFramePool(SizeInt32 size, bool recreateDevice) {
+            do {
+                try {
+                    if (recreateDevice) {
+                        _canvasDevice = new CanvasDevice();
+                    }
+
+                    _framePool.Recreate(
+                        _canvasDevice,
+                        DirectXPixelFormat.B8G8R8A8UIntNormalized,
+                        2,
+                        size);
+                }
+                // This is the device-lost convention for Win2D.
+                catch (Exception e) when (_canvasDevice.IsDeviceLost(e.HResult)) {
+                    _canvasDevice = null;
+                    recreateDevice = true;
+                }
+            } while (_canvasDevice == null);
+        }
+
+
+        private void TextField_GettingFocus(UIElement sender, GettingFocusEventArgs args) {
+            textFieldFocused=true;
+        }
+
+        private void TextField_LosingFocus(UIElement sender, LosingFocusEventArgs args) {
+            textFieldFocused = false;
+        }
 
     }
 
@@ -619,7 +885,6 @@ namespace ImageScanOCR {
                 width = ratio * maxSize;
                 height = maxSize;
             }
-
 
             return await GetResizedImage(source, width, height);
         }
@@ -777,9 +1042,6 @@ namespace ImageScanOCR {
 
 
 
-
-
-
         public async Task<List<ExplorerItem>> GetChildItemList() {
             if (Label == "folder") {
                 return await GetFolderChildItem((StorageFolder)Data);
@@ -854,6 +1116,7 @@ namespace ImageScanOCR {
     class BoxCoordinates {
         int _initialPointX, _initialPointY;
         int _maxWidth, _maxHeight;
+        public int X, Y, W, H;
 
         public BoxCoordinates(int x, int y, int maxWidth, int maxHeight) {
             _initialPointX = x;
@@ -877,11 +1140,28 @@ namespace ImageScanOCR {
             H = Math.Min(H, _maxHeight - this.Y);
         }
 
+        public void UpdateSize(double Width, double Height) {
+            double ratioWidth = Width/_maxWidth ;
+            double ratioHeight = Height/_maxHeight;
+            X = (int)(X * ratioWidth);
+            Y = (int)(Y * ratioHeight);
+            W = (int)(W * ratioWidth);
+            H = (int)(H * ratioHeight);
+            
+            _maxWidth = (int)Width;
+            _maxHeight = (int)Height;
+        }
 
-        public int X { get; set; }
-        public int Y { get; set; }
-        public int W { get; set; }
-        public int H { get; set; }
+        public (uint, uint, uint, uint) GetRatioXYWH(double NewWidth, double NewHeight) {
+            double ratioWidth = NewWidth / _maxWidth;
+            double ratioHeight = NewHeight / _maxHeight;
+            uint x = (uint)(X * ratioWidth);
+            uint y = (uint)(Y * ratioHeight);
+            uint w = (uint)(W * ratioWidth);
+            uint h = (uint)(H * ratioHeight);
+            return (x, y, w, h);
+        } 
+        
     }
 
 }
