@@ -4,6 +4,10 @@ This OCR app convert given text image to editable plain text.
 User can handle its plain text and can save OCR result text as plain text file.  
 download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr/9pjhnq2r5kg7?activetab=pivot:overviewtab)     
 
+[<img alt="microsoft store" width="128px" src="doc/microsoft.png" />](https://www.microsoft.com/en-us/p/image-scan-ocr/9pjhnq2r5kg7?activetab=pivot:overviewtab)
+[<img alt="softpedia" width="128px" src="doc/softpedia.png" />](https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Image-Scan-OCR.shtml)
+
+
 # Result   
 ![result](doc/screenshot_1.png)    
 ![result](doc/screenshot_2.png)    
@@ -36,7 +40,7 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - It does not store any personal data, images, or OCR result text
 
 # Change log
-- 1.0.8
+- 1.0.9
   - support OCR on screen capture
 - 1.0.8
   - fix batch processing
@@ -80,7 +84,8 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - [mica](https://docs.microsoft.com/en-us/windows/apps/design/style/mica)   
 - [Rise-Notes](https://github.com/Rise-Software/Rise-Notes)   
 - [window store delploy](https://codedragon.tistory.com/3209) 
-
+- [softpedia](https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Image-Scan-OCR.shtml)
+- [review by gigafree](https://www.gigafree.net/tool/ocr/Image-Scan-OCR.html)
 
 
 
