@@ -85,6 +85,7 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - [Rise-Notes](https://github.com/Rise-Software/Rise-Notes)   
 - [window store delploy](https://codedragon.tistory.com/3209) 
 - [softpedia](https://www.softpedia.com/get/Office-tools/Other-Office-Tools/Image-Scan-OCR.shtml)
+- [review by gigafree](https://www.gigafree.net/tool/ocr/Image-Scan-OCR.html)
 
 
 
