@@ -11,6 +11,7 @@ using System.Numerics;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Windows.ApplicationModel.Core;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Data.Pdf;
@@ -23,6 +24,7 @@ using Windows.Graphics.Imaging;
 using Windows.Media.Ocr;
 using Windows.Storage;
 using Windows.Storage.AccessCache;
+using Windows.Storage.FileProperties;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
 using Windows.System;
@@ -182,6 +184,7 @@ namespace ImageScanOCR {
                     Breadcrumbs.Add(new ExplorerItem(KnownFolders.PicturesLibrary));
                 }
             } catch (FileNotFoundException) {
+                Debug.WriteLine("File not found");
             }
         }
 
@@ -246,7 +249,7 @@ namespace ImageScanOCR {
             }
         }
 
-        
+
 
 
         //open folder and reset
@@ -288,7 +291,7 @@ namespace ImageScanOCR {
             if (imageItem == null) {
                 return;
             }
-            
+
             if (updateDisplayImage) {
                 resetImageProcess();
                 DisplayImage(imageItem);
@@ -296,7 +299,7 @@ namespace ImageScanOCR {
             }
             if (IsCropped) {
                 (uint x, uint y, uint w, uint h) = cropBoxCoordinates.GetRatioXYWH(imageItem.PixelWidth, imageItem.PixelHeight);
-                if (w>1&&h>1) { //if too small crop skip
+                if (w > 1 && h > 1) { //if too small crop skip
                     imageItem = await ImageProcessor.GetCroppedImage(imageItem, x, y, w, h);
                 }
             }
@@ -307,7 +310,7 @@ namespace ImageScanOCR {
         }
 
         public async void DisplayImage(SoftwareBitmap imageItem) {
-            PreviewImage.Source = await ImageProcessor.getImageSource(imageItem);   
+            PreviewImage.Source = await ImageProcessor.getImageSource(imageItem);
         }
 
         private void showSingleImageBox() {
@@ -328,11 +331,11 @@ namespace ImageScanOCR {
             //image reset
             ImageSingleBox.Visibility = Visibility.Collapsed;
             PreviewImage.Visibility = Visibility.Collapsed;
-            MyCanvas.Visibility=Visibility.Collapsed;
+            MyCanvas.Visibility = Visibility.Collapsed;
             CropBox.Visibility = Visibility.Collapsed;
             CurrentOcrResult.Clear();
             IsCropped = false;
-            cropBoxCoordinates =null;
+            cropBoxCoordinates = null;
 
             //batch reset
             ImageListView.Visibility = Visibility.Collapsed;
@@ -383,7 +386,7 @@ namespace ImageScanOCR {
         private async Task ProcessBatch() {
             TokenSource = new CancellationTokenSource();
             var token = TokenSource.Token;
-                    
+
             foreach (ExplorerItem item in ExplorerList) {
                 if (token.IsCancellationRequested) {
                     break;
@@ -392,11 +395,11 @@ namespace ImageScanOCR {
                 if (item.Label == "pdfPage" || item.Label == "file") {
                     CurrentProcessedItemName = ((ExplorerItem)Breadcrumbs.Last()).Name;
                     SoftwareBitmap bitmapImage = await item.GetBitmapImage();
-                    
+
                     List<string> textList = await OcrProcessor.GetText(bitmapImage, SelectedLang);
                     textList.Add("");                                 //add empty line to separate result
                     CurrentOcrResult.AddRange(textList);
-                    
+
                     //display update
                     ImageList.Add(await ImageProcessor.getImageSource(bitmapImage));
                     DisplayText();
@@ -485,7 +488,7 @@ namespace ImageScanOCR {
 
 
         private void PreviewImage_SizeChanged(object sender, SizeChangedEventArgs e) {
-            IsCropped=false;
+            IsCropped = false;
             cropBoxCoordinates = null;
             CropBox.Visibility = Visibility.Collapsed;
             MyCanvas.Width = ((Image)sender).ActualWidth;
@@ -499,13 +502,13 @@ namespace ImageScanOCR {
             (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
 
             if (IsLeftButtonPressed) {
-                UpdateCropBox(X,Y, true);
+                UpdateCropBox(X, Y, true);
             }
             e.Handled = true;
         }
         private void Canvas_MouseMove(object sender, PointerRoutedEventArgs e) {
             (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
-            UpdateCropBox(X,Y);
+            UpdateCropBox(X, Y);
             e.Handled = true;
         }
 
@@ -522,34 +525,34 @@ namespace ImageScanOCR {
 
         private void Canvas_MouseExited(object sender, PointerRoutedEventArgs e) {
             (int X, int Y, bool IsLeftButtonPressed) = GetPointerStatus(sender, e);
-            ProcessCanvas(X,Y);
+            ProcessCanvas(X, Y);
             Window.Current.CoreWindow.PointerCursor = cursorBeforePointerEntered;
             e.Handled = true;
         }
 
 
         private void ProcessCanvas(int X, int Y) {
-            if (IsCropped || cropBoxCoordinates==null) {
+            if (IsCropped || cropBoxCoordinates == null) {
                 return;
             }
             IsCropped = true;
-            UpdateCropBox(X,Y);
+            UpdateCropBox(X, Y);
             ProcessImage(CurrentBitmap, false);
         }
 
-        
+
         private (int, int, bool) GetPointerStatus(object sender, PointerRoutedEventArgs e) {
             //return X, Y, IsLeftButtonPressed
             PointerPoint ptrPt = e.GetCurrentPoint((UIElement)sender);
             return ((int)ptrPt.Position.X, (int)ptrPt.Position.Y, ptrPt.Properties.IsLeftButtonPressed);
         }
 
-        private void UpdateCropBox(int X, int Y, bool Reset=false) {
+        private void UpdateCropBox(int X, int Y, bool Reset = false) {
             if (Reset) {
                 IsCropped = false;
                 cropBoxCoordinates = new BoxCoordinates(X, Y, (int)MyCanvas.Width, (int)MyCanvas.Height);
             }
-            if (IsCropped==true || cropBoxCoordinates == null) {
+            if (IsCropped == true || cropBoxCoordinates == null) {
                 return;
             }
 
@@ -610,7 +613,7 @@ namespace ImageScanOCR {
                 DirectXAlphaMode.Premultiplied);    // This is the only value that currently works with
                                                     // the composition APIs.
 
-            
+
             var visual = _compositor.CreateSpriteVisual();
             visual.RelativeSizeAdjustment = Vector2.One;
             var brush = _compositor.CreateSurfaceBrush(_surface);
@@ -653,12 +656,12 @@ namespace ImageScanOCR {
                DirectXPixelFormat.B8G8R8A8UIntNormalized, // Pixel format
                2, // Number of frames
                _item.Size); // Size of the buffers
-            
+
             _framePool.FrameArrived += (s, a) => {
                 using (var frame = _framePool.TryGetNextFrame()) {
                     ProcessFrame(frame);
                 }
-                
+
             };
 
             _item.Closed += (s, a) => {
@@ -675,7 +678,7 @@ namespace ImageScanOCR {
             _item = null;
             _session = null;
             _framePool = null;
-            
+
         }
 
         private void ProcessFrame(Direct3D11CaptureFrame frame) {
@@ -701,7 +704,7 @@ namespace ImageScanOCR {
                 CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
                     _canvasDevice,
                     frame.Surface);
-                
+
                 _currentFrame = canvasBitmap;
 
                 // Helper that handles the drawing for us.
@@ -744,7 +747,7 @@ namespace ImageScanOCR {
             }
         }
 
-        
+
 
         private void ResetFramePool(SizeInt32 size, bool recreateDevice) {
             do {
@@ -769,7 +772,7 @@ namespace ImageScanOCR {
 
 
         private void TextField_GettingFocus(UIElement sender, GettingFocusEventArgs args) {
-            textFieldFocused=true;
+            textFieldFocused = true;
         }
 
         private void TextField_LosingFocus(UIElement sender, LosingFocusEventArgs args) {
@@ -860,61 +863,47 @@ namespace ImageScanOCR {
 
     public static class ImageProcessor {
 
-        public static async Task<SoftwareBitmap> LoadImage(StorageFile file) {
+        public static async Task<SoftwareBitmap> LoadImage(StorageFile file, uint maxSize = 2000) {
             try {
                 using (var stream = await file.OpenAsync(FileAccessMode.Read)) {
+                    SoftwareBitmap softwareBitmap;
                     BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
-                    SoftwareBitmap softwareBitmap = await decoder.GetSoftwareBitmapAsync();
-                    softwareBitmap = await GetResizedImageInMaxSize(softwareBitmap);
+                    ImageProperties imageProperties = await file.Properties.GetImagePropertiesAsync();
+
+
+                    if (imageProperties.Width < maxSize && imageProperties.Height < maxSize) {
+                        softwareBitmap = await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+                    } else {
+                        softwareBitmap = await GetResizedImage(decoder, imageProperties.Width, imageProperties.Height, maxSize);
+                    }
                     return softwareBitmap;
                 }
-            } catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException) {
+            } catch (Exception) {
+                Debug.WriteLine("Load Image Fail");
                 return null;
             }
         }
 
-        public static async Task<SoftwareBitmap> GetResizedImageInMaxSize(SoftwareBitmap source, float maxSize = 2000) {
-            float width = source.PixelWidth;
-            float height = source.PixelHeight;
-            float ratio = width / height;
+        public static async Task<SoftwareBitmap> GetResizedImage(BitmapDecoder decoder, uint width, uint height, uint maxSize) {
+            float ratio = (float)width / height;
             if (width > maxSize) {
                 width = maxSize;
-                height = maxSize / ratio;
+                height = (uint)(maxSize / ratio);
             }
             if (height > maxSize) {
-                width = ratio * maxSize;
+                width = (uint)(ratio * maxSize);
                 height = maxSize;
             }
 
-            return await GetResizedImage(source, width, height);
+            var transform = new BitmapTransform() {
+                ScaledWidth = width,
+                ScaledHeight = height,
+                InterpolationMode = BitmapInterpolationMode.Fant,
+            };
+
+            return await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied, transform, ExifOrientationMode.IgnoreExifOrientation, ColorManagementMode.DoNotColorManage);
         }
 
-        public static async Task<SoftwareBitmap> GetResizedImage(SoftwareBitmap source, float newWidth, float newHeight) {
-
-
-            //https://blog.daruyanagi.jp/entry/2020/01/06/172012/
-            if (source == null) return null;
-
-            using (var memory = new InMemoryRandomAccessStream()) {
-                var id = BitmapEncoder.PngEncoderId;
-                BitmapEncoder encoder = await BitmapEncoder.CreateAsync(id, memory);
-                encoder.BitmapTransform.ScaledHeight = (uint)newHeight;
-                encoder.BitmapTransform.ScaledWidth = (uint)newWidth;
-                encoder.BitmapTransform.InterpolationMode = BitmapInterpolationMode.Fant;
-                encoder.SetSoftwareBitmap(source);
-                await encoder.FlushAsync();
-
-
-                var writeableBitmap = new WriteableBitmap((int)newWidth, (int)newHeight);
-                await writeableBitmap.SetSourceAsync(memory);
-
-
-
-                var dest = new SoftwareBitmap(BitmapPixelFormat.Bgra8, (int)newWidth, (int)newHeight, BitmapAlphaMode.Premultiplied);
-                dest.CopyFromBuffer(writeableBitmap.PixelBuffer);
-                return dest;
-            }
-        }
         public static async Task<SoftwareBitmap> GetCroppedImage(SoftwareBitmap softwareBitmap, uint x, uint y, uint w, uint h) {
 
             using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream()) {
@@ -1076,7 +1065,7 @@ namespace ImageScanOCR {
                     if (new List<string>() { ".jpeg", ".jpg", ".png", ".gif", ".tiff", ".bmp", ".pdf" }.Contains(fileItem.FileType.ToLower())) {
                         childList.Add(new ExplorerItem(item));
                     }
-                } else {
+                } else if (item is StorageFolder) {
                     childList.Add(new ExplorerItem(item));
                 }
             }
@@ -1140,18 +1129,6 @@ namespace ImageScanOCR {
             H = Math.Min(H, _maxHeight - this.Y);
         }
 
-        public void UpdateSize(double Width, double Height) {
-            double ratioWidth = Width/_maxWidth ;
-            double ratioHeight = Height/_maxHeight;
-            X = (int)(X * ratioWidth);
-            Y = (int)(Y * ratioHeight);
-            W = (int)(W * ratioWidth);
-            H = (int)(H * ratioHeight);
-            
-            _maxWidth = (int)Width;
-            _maxHeight = (int)Height;
-        }
-
         public (uint, uint, uint, uint) GetRatioXYWH(double NewWidth, double NewHeight) {
             double ratioWidth = NewWidth / _maxWidth;
             double ratioHeight = NewHeight / _maxHeight;
@@ -1160,8 +1137,8 @@ namespace ImageScanOCR {
             uint w = (uint)(W * ratioWidth);
             uint h = (uint)(H * ratioHeight);
             return (x, y, w, h);
-        } 
-        
+        }
+
     }
 
 }
