@@ -49,7 +49,6 @@
                             </controls:GridSplitter.Element>
                         </controls:GridSplitter>
 
-
                         <!--left file explorer panel-->
                         <Grid Grid.Column="0" Background="#1036C0FF">
                             <Grid>
@@ -64,9 +63,9 @@
                                 </muxc:BreadcrumbBar>
 
                                 <ListView x:Name="FolderListView" 
-                                     IsItemClickEnabled="True" 
-                                     ItemClick="FolderListView_ItemClick" Grid.Row="1"  ItemsSource="{x:Bind ExplorerList}">
-
+                                    IsItemClickEnabled="True" 
+                                    SelectionChanged="FolderListView_SelectionChangedAsync"
+                                    Grid.Row="1"  ItemsSource="{x:Bind ExplorerList}" >
 
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
@@ -79,7 +78,7 @@
                                 </ListView>
                             </Grid>
                         </Grid>
-
+                        
                         <!--image panel-->
                         <Grid Grid.Column="2"  AllowDrop="True"    Drop="Grid_Drop"    DragOver="Grid_DragOver"  Background="Transparent"  >
 

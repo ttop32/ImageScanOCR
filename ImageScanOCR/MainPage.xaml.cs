@@ -58,6 +58,7 @@ namespace ImageScanOCR {
         SoftwareBitmap CurrentBitmap = null;
         List<string> CurrentOcrResult = new List<string>() { };
         List<string> PrevOcrResult = new List<string>() { };
+        string PrevOcrTextMode = "";
         ApplicationDataContainer LocalSettings = SettingHandler.GetSetting();
         CancellationTokenSource TokenSource = new CancellationTokenSource();
         string CurrentProcessedItemName = "New Document";
@@ -81,7 +82,7 @@ namespace ImageScanOCR {
 
         public MainPage() {
             Debug.WriteLine("Start==============================");
-            TaskScheduler.UnobservedTaskException += OnUnobservedException;
+            //TaskScheduler.UnobservedTaskException += OnUnobservedException;
             this.InitializeComponent();
             InitTitleBar();
             InitFolderViewList();
@@ -157,7 +158,7 @@ namespace ImageScanOCR {
             //save language when changed and reprocess image
             SelectedLang = e.AddedItems[0] as Language;
             LocalSettings.Values["Language"] = SelectedLang.LanguageTag;
-            ProcessImage(CurrentBitmap);
+            ProcessImage(CurrentBitmap, false, false);
         }
 
         private async void AddLanguage_Click(object sender, RoutedEventArgs e) {
@@ -236,20 +237,19 @@ namespace ImageScanOCR {
         }
 
 
-        //if is folder open , update breadcrum and exploer list
+        //if is folder, open it and update breadcrum/exploer list
         //if file open image and process
-        private async void FolderListView_ItemClick(object sender, ItemClickEventArgs e) {
-            var clickedItem = e.ClickedItem as ExplorerItem;
-            if (clickedItem.Label == "folder" || clickedItem.Label == "pdf") {
-                Breadcrumbs.Add(clickedItem);
-            } else if (clickedItem.Label == "file" || clickedItem.Label == "pdfPage") {
-                CurrentProcessedItemName = clickedItem.Name;
-                CurrentBitmap = await clickedItem.GetBitmapImage();
+        private async void FolderListView_SelectionChangedAsync(object sender, SelectionChangedEventArgs e) {
+            var selectedItem = this.FolderListView.SelectedItem as ExplorerItem;
+
+            if (selectedItem.Label == "folder" || selectedItem.Label == "pdf") {
+                Breadcrumbs.Add(selectedItem);
+            } else if (selectedItem.Label == "file" || selectedItem.Label == "pdfPage") {
+                CurrentProcessedItemName = selectedItem.Name;
+                CurrentBitmap = await selectedItem.GetBitmapImage();
                 ProcessImage(CurrentBitmap);
             }
         }
-
-
 
 
         //open folder and reset
@@ -287,13 +287,16 @@ namespace ImageScanOCR {
             ProcessImage(CurrentBitmap);
         }
 
-        public async void ProcessImage(SoftwareBitmap imageItem, bool updateDisplayImage = true) {
+        public async void ProcessImage(SoftwareBitmap imageItem, bool updateDisplayImage = true, bool resetPrevProcess = true) {
             if (imageItem == null) {
                 return;
             }
 
-            if (updateDisplayImage) {
+            if (resetPrevProcess) {
                 resetImageProcess();
+            }
+
+            if (updateDisplayImage) {
                 DisplayImage(imageItem);
                 showSingleImageBox();
             }
@@ -443,13 +446,17 @@ namespace ImageScanOCR {
             LocalSettings.Values["WrapText"] = TextProcessor.GetNextTextMode(currentSelectedItem);
         }
         private void DisplayText() {
-            //if ocr result is not changed, skip
-            if (PrevOcrResult.SequenceEqual(CurrentOcrResult)) {
+            string currentMode = LocalSettings.Values["WrapText"] as string;
+
+            //if ocr text result is not changed, skip
+            if (PrevOcrResult.SequenceEqual(CurrentOcrResult) && PrevOcrTextMode == currentMode) {
                 return;
             }
-            PrevOcrResult = new List<String>(CurrentOcrResult.ToArray());
-            string currentMode = LocalSettings.Values["WrapText"] as string;
+
             TextField.Text = TextProcessor.GetWrapText(CurrentOcrResult, currentMode);
+
+            PrevOcrResult = new List<String>(CurrentOcrResult.ToArray());
+            PrevOcrTextMode = currentMode;
         }
 
 
@@ -537,7 +544,7 @@ namespace ImageScanOCR {
             }
             IsCropped = true;
             UpdateCropBox(X, Y);
-            ProcessImage(CurrentBitmap, false);
+            ProcessImage(CurrentBitmap, false, false);
         }
 
 
@@ -576,6 +583,7 @@ namespace ImageScanOCR {
         private async void Capture_Click(object sender, RoutedEventArgs e) {
             resetImageProcess();
             ShowCancelCaptureButton();
+            showCaptureBox();
             await StartCaptureAsync();
         }
 
@@ -633,8 +641,6 @@ namespace ImageScanOCR {
             // The item may be null if the user dismissed the
             // control without making a selection or hit Cancel.
             if (item != null) {
-                resetImageProcess();
-                showCaptureBox();
                 StartCaptureInternal(item);
             } else {
                 ShowCaptureButton();
@@ -743,7 +749,7 @@ namespace ImageScanOCR {
                 SoftwareBitmap softwareBitmapImg = await SoftwareBitmap.CreateCopyFromSurfaceAsync(canvasBitmap, BitmapAlphaMode.Premultiplied);
                 CurrentBitmap = softwareBitmapImg;
                 DisplayImage(softwareBitmapImg);
-                ProcessImage(softwareBitmapImg, false);
+                ProcessImage(softwareBitmapImg, false, false);
             }
         }
 
@@ -822,8 +828,7 @@ namespace ImageScanOCR {
                 resultText = String.Join("\n", currentOcrResult.ToArray());
             } else if (currentMode == "space") {
                 resultText = String.Join(" ", currentOcrResult.ToArray());
-            } else if (currentMode == "sentence")  //split by sentence
-              {
+            } else if (currentMode == "sentence") { //split by sentence
                 resultText = String.Join(" ", currentOcrResult.ToArray());
                 string[] sentences = Regex.Split(resultText, @"(?<=[\.!\?])\s+");
                 resultText = String.Join("\n", sentences);
@@ -870,12 +875,12 @@ namespace ImageScanOCR {
                     BitmapDecoder decoder = await BitmapDecoder.CreateAsync(stream);
                     ImageProperties imageProperties = await file.Properties.GetImagePropertiesAsync();
 
-
                     if (imageProperties.Width < maxSize && imageProperties.Height < maxSize) {
                         softwareBitmap = await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
                     } else {
-                        softwareBitmap = await GetResizedImage(decoder, imageProperties.Width, imageProperties.Height, maxSize);
+                        softwareBitmap = await GetResizedImage(decoder, imageProperties.Orientation, imageProperties.Width, imageProperties.Height, maxSize);
                     }
+
                     return softwareBitmap;
                 }
             } catch (Exception) {
@@ -884,8 +889,14 @@ namespace ImageScanOCR {
             }
         }
 
-        public static async Task<SoftwareBitmap> GetResizedImage(BitmapDecoder decoder, uint width, uint height, uint maxSize) {
+        public static async Task<SoftwareBitmap> GetResizedImage(BitmapDecoder decoder, PhotoOrientation orientation, uint width, uint height, uint maxSize) {
+            //if rotated, change width height
+            if (new[] { PhotoOrientation.Rotate270, PhotoOrientation.Rotate90, PhotoOrientation.Transpose, PhotoOrientation.Transverse }.Contains(orientation)) {
+                (width, height) = (height, width);
+            }
+
             float ratio = (float)width / height;
+
             if (width > maxSize) {
                 width = maxSize;
                 height = (uint)(maxSize / ratio);
@@ -901,7 +912,7 @@ namespace ImageScanOCR {
                 InterpolationMode = BitmapInterpolationMode.Fant,
             };
 
-            return await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied, transform, ExifOrientationMode.IgnoreExifOrientation, ColorManagementMode.DoNotColorManage);
+            return await decoder.GetSoftwareBitmapAsync(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied, transform, ExifOrientationMode.RespectExifOrientation, ColorManagementMode.DoNotColorManage);
         }
 
         public static async Task<SoftwareBitmap> GetCroppedImage(SoftwareBitmap softwareBitmap, uint x, uint y, uint w, uint h) {
@@ -1058,18 +1069,23 @@ namespace ImageScanOCR {
         public async Task<List<ExplorerItem>> GetFolderChildItem(StorageFolder folder) {
             List<ExplorerItem> childList = new List<ExplorerItem>();
 
-            foreach (IStorageItem item in await folder.GetItemsAsync()) {
-                if (item is StorageFile) {
-                    var fileItem = item as StorageFile;
-                    //check isImage
-                    if (new List<string>() { ".jpeg", ".jpg", ".png", ".gif", ".tiff", ".bmp", ".pdf" }.Contains(fileItem.FileType.ToLower())) {
+            try {
+                foreach (IStorageItem item in await folder.GetItemsAsync()) {
+                    if (item is StorageFile) {
+                        var fileItem = item as StorageFile;
+                        //check isImage
+                        if (new List<string>() { ".jpeg", ".jpg", ".png", ".gif", ".tiff", ".bmp", ".pdf" }.Contains(fileItem.FileType.ToLower())) {
+                            childList.Add(new ExplorerItem(item));
+                        }
+                    } else if (item is StorageFolder) {
                         childList.Add(new ExplorerItem(item));
                     }
-                } else if (item is StorageFolder) {
-                    childList.Add(new ExplorerItem(item));
                 }
+            } catch (Exception e) {
+                Debug.WriteLine(e.ToString());
             }
             return childList;
+
         }
 
 
