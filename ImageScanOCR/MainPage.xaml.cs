@@ -240,9 +240,11 @@ namespace ImageScanOCR {
         //if is folder, open it and update breadcrum/exploer list
         //if file open image and process
         private async void FolderListView_SelectionChangedAsync(object sender, SelectionChangedEventArgs e) {
-            var selectedItem = this.FolderListView.SelectedItem as ExplorerItem;
 
-            if (selectedItem.Label == "folder" || selectedItem.Label == "pdf") {
+            var selectedItem = this.FolderListView.SelectedItem as ExplorerItem;
+            if (selectedItem == null) {
+                return;
+            }else if (selectedItem.Label == "folder" || selectedItem.Label == "pdf") {
                 Breadcrumbs.Add(selectedItem);
             } else if (selectedItem.Label == "file" || selectedItem.Label == "pdfPage") {
                 CurrentProcessedItemName = selectedItem.Name;
