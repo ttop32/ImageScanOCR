@@ -40,6 +40,13 @@ download from [microsoft store](https://www.microsoft.com/en-us/p/image-scan-ocr
 - It does not store any personal data, images, or OCR result text
 
 # Change log
+- 1.0.12
+  - fix folder open crash
+- 1.0.11
+  - fix EXIF oritentation 
+  - fix keyboard file selection 
+  - fix textwrap
+  - fix capture cancle button
 - 1.0.10
   - fix image resize crash
 - 1.0.9
